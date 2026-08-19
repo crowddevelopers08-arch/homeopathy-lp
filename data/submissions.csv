@@ -1,0 +1,16 @@
+Timestamp,Source,Name,Phone,Email,URL,TeleCRM
+"18/8/2026, 12:24:05 pm",Generic Consult,Rajesh Kumar,7412580369,rajeshk@growmedico.com,http://localhost:3000/,Not configured
+"18/8/2026, 12:25:44 pm",Generic Consult,Debug Test,9876543210,debug@example.com,http://localhost:3000/,Not configured
+"18/8/2026, 12:27:01 pm",Generic Consult,Debug Test 2,9876543210,debug2@example.com,http://localhost:3000/,Not configured
+"18/8/2026, 12:33:11 pm",Generic Consult,Rajesh Kumar,7412580360,rajeshk@growmedico.com,http://localhost:3000/,Not configured
+"18/8/2026, 12:39:38 pm",Homeo-Form-Leads,Rajesh Kumar,7412580360,rajeshk@growmedico.com,http://localhost:3000/,Not configured
+"18/8/2026, 12:41:11 pm",Homeo-Form-Leads,Rajesh Kumar,3201456987,rajeshk@growmedico.com,http://localhost:3000/,Not configured
+"18/8/2026, 6:10:17 pm",Homeo-Form-Leads,testing,8007337106,crowddevelopers08@gmail.com,http://localhost:3000/,TeleCRM lead confirmed
+"19/8/2026, 10:52:46 am",Homeo-Form-Leads,Rajesh Kumar,1425367890,rajeshk@growmedico.com,http://localhost:3000/anxiety,TeleCRM lead confirmed
+"19/8/2026, 10:55:59 am",Homeo-Form-Leads,Rajesh Kumar,7412580369,rajeshk@growmedico.com,http://localhost:3000/anxiety,TeleCRM lead confirmed
+"19/8/2026, 11:33:41 am",Homeo-Form-Leads,testing,3201456987,rajeshk@growmedico.com,http://localhost:3000/anxiety,TeleCRM lead confirmed
+"19/8/2026, 11:46:22 am",Homeo-Form-Leads,Rajesh Kumar,3201456987,rajeshk@growmedico.com,http://localhost:3000/anxiety,TeleCRM lead confirmed
+"19/8/2026, 11:52:04 am",Homeo-Form-Leads,Rajesh Kumar,7859641237,rajeshk@growmedico.com,http://localhost:3000/anxiety,TeleCRM lead confirmed
+"19/8/2026, 12:17:08 pm",Anxiety-Form-Leads,Rajesh Kumar,7412580367,rajeshk@growmedico.com,http://localhost:3001/anxiety,TeleCRM lead confirmed
+"19/8/2026, 12:52:54 pm",Anxiety-Form-Leads,testing,7859641201,testing@gmail.com,http://localhost:3001/anxiety,TeleCRM lead confirmed
+"19/8/2026, 2:51:38 pm",Anxiety-Form-Leads,Rajesh Kumar,7412580364,rajeshk@growmedico.com,http://localhost:3000/anxiety,TeleCRM lead confirmed
