@@ -5,16 +5,15 @@ import { useState } from "react";
 import BookingModal from "./BookingModal";
 import Reveal from "./Reveal";
 
-function FeatureImage({ side, alt }: { side: "left" | "right"; alt: string }) {
+function FeatureImage({ src, alt }: { src: string; alt: string }) {
   return (
     <Image
-      src="/learning-discovery-strip.png"
+      src={src}
       alt={alt}
-      width={1774}
-      height={887}
-      sizes="(max-width: 640px) 700px, (max-width: 1024px) 820px, 800px"
-      quality={100}
-      className={`absolute top-0 h-full w-[200%] max-w-none object-cover ${side === "left" ? "left-0" : "-left-full"}`}
+      fill
+      sizes="(max-width: 1023px) 58vw, 395px"
+      quality={90}
+      className="object-cover object-center"
     />
   );
 }
@@ -23,7 +22,7 @@ export default function LearningDiscovery() {
   const [bookingOpen, setBookingOpen] = useState(false);
 
   return (
-    <section id="about" className="overflow-hidden bg-white px-4 py-8 font-sans text-black/70 sm:px-6 sm:py-10 lg:min-h-[800px] lg:py-[10px]">
+    <section id="about" className="overflow-hidden bg-white px-4 py-8 font-sans text-black/70 sm:px-6 sm:py-10 lg:pb-15 lg:py-[10px]">
       <Reveal direction="up" className="mx-auto mb-8 max-w-[900px] text-center sm:mb-8">
         <p className="text-[12px] font-bold tracking-[1px] text-[#1f5fff] sm:text-[14px]">
           ABOUT THE CLINIC
@@ -34,17 +33,17 @@ export default function LearningDiscovery() {
       </Reveal>
 
       <div className="mx-auto grid max-w-[1490px] items-center gap-10 sm:gap-14 lg:grid-cols-[1.08fr_.92fr] lg:gap-16">
-        <Reveal direction="left" className="relative mx-auto h-[355px] w-full max-w-[700px] sm:h-[500px] lg:h-[506px]">
-          <div className="absolute left-0 top-0 h-[315px] w-[58%] overflow-hidden sm:h-[440px] lg:h-[505px] lg:w-[395px]">
+        <Reveal direction="left" className="relative mx-auto h-[205px] w-full max-w-[700px] sm:h-[350px] lg:h-[335px]">
+          <div className="absolute left-0 top-0 aspect-[3/2] w-[58%] overflow-hidden lg:w-[395px]">
             <FeatureImage
-              side="left"
-              alt="Children enjoying an outdoor climbing frame"
+              src="/adhds.jpg"
+              alt="A child receiving attentive support"
             />
           </div>
-          <div className="learning-image-float absolute left-[42%] top-[35px] h-[315px] w-[58%] overflow-hidden rounded-[5px] sm:top-[50px] sm:h-[440px] lg:left-[288px] lg:top-[60px] lg:h-[505px] lg:w-[393px]">
+          <div className="learning-image-float absolute left-[42%] top-[35px] aspect-[3/2] w-[58%] overflow-hidden rounded-[5px] sm:top-[50px] lg:left-[288px] lg:top-[60px] lg:w-[393px]">
             <FeatureImage
-              side="right"
-              alt="Smiling student writing beside an open book"
+              src="/adhds1.jpg"
+              alt="A child learning with supportive guidance"
             />
           </div>
         </Reveal>

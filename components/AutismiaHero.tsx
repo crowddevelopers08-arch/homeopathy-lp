@@ -12,16 +12,16 @@ function AutismiaLogo() {
 }
 
 const portraits = [
-  { name: "A child covering his face", position: "left-0" },
-  { name: "A child covering his ears", position: "-left-full" },
-  { name: "A thoughtful child looking down", position: "-left-[200%]" },
-  { name: "A playful child outdoors", position: "-left-[300%]" },
-  { name: "A smiling child covering her eyes", position: "-left-[400%]" },
+  { name: "A child finding it difficult to concentrate in class", crop: "bg-[length:auto_200%] bg-[position:18%_0%]" },
+  { name: "Four childhood behaviour and development scenarios", crop: "bg-cover bg-center" },
+  { name: "An active child jumping on a sofa", crop: "bg-[length:auto_200%] bg-[position:18%_100%]" },
+  { name: "A child practising speech with a caregiver", crop: "bg-[length:auto_200%] bg-[position:92%_0%]" },
+  { name: "A distressed child being supported by a caregiver", crop: "bg-[length:200%_200%] bg-[position:100%_100%]" },
 ];
 
 function Portrait({ index, className }: { index: number; className: string }) {
   const item = portraits[index];
-  return <div className={`absolute overflow-hidden ${className}`}><Image src="/autismia-children-strip.png" alt={item.name} width={2560} height={1024} quality={90} sizes="850px" className={`absolute top-0 h-full w-[500%] max-w-none object-cover ${item.position}`}/></div>;
+  return <div role="img" aria-label={item.name} className={`absolute overflow-hidden bg-[url('/banner.png')] bg-no-repeat ${item.crop} ${className}`}/>;
 }
 
 const features = [
@@ -50,7 +50,7 @@ export default function AutismiaHero() {
   }, [menuOpen]);
 
   return <section className="relative min-h-[900px] overflow-hidden bg-[#000d44] font-sans text-white lg:min-h-screen">
-    <div className="absolute inset-0 overflow-hidden"><Image src="/autismia-children-strip.png" alt="" width={2560} height={1024} priority quality={90} sizes="250vw" className="hero-background-zoom absolute left-0 top-0 h-full w-[250%] max-w-none object-cover object-center opacity-50"/><div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,13,68,.9)_0%,rgba(0,13,68,.76)_52%,rgba(0,13,68,.86)_100%)]"/><div className="absolute inset-0 bg-[radial-gradient(circle_at_67%_48%,transparent_0%,rgba(0,13,68,.22)_72%)]"/></div>
+    <div className="absolute inset-0 overflow-hidden"><Image src="/banner.png" alt="" fill priority quality={90} sizes="100vw" className="hero-background-zoom object-cover object-center opacity-50"/><div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,13,68,.9)_0%,rgba(0,13,68,.76)_52%,rgba(0,13,68,.86)_100%)]"/><div className="absolute inset-0 bg-[radial-gradient(circle_at_67%_48%,transparent_0%,rgba(0,13,68,.22)_72%)]"/></div>
 
     <header className="relative z-30 mx-auto flex h-[90px] max-w-[1380px] items-center justify-between px-6">
       <AutismiaLogo/>
@@ -119,11 +119,11 @@ export default function AutismiaHero() {
         </Reveal>
       </div>
 
-      <Reveal direction="right" className="hidden relative mx-auto mt-8 h-[560px] w-full max-w-[540px] lg:mt-0 lg:block"><div className="absolute -inset-20 rounded-[50%] border border-white/15"/><div className="absolute -inset-5 rounded-[45%] border border-white/10"/><Portrait index={0} className="left-2 top-5 h-[350px] w-[165px] rounded-[70px]"/><Portrait index={1} className="left-[195px] top-5 h-[165px] w-[165px] rounded-[60px]"/><Portrait index={2} className="left-[195px] top-[205px] h-[350px] w-[165px] rounded-[70px]"/><Portrait index={3} className="right-0 top-[100px] h-[345px] w-[165px] rounded-[70px]"/><Portrait index={4} className="left-2 top-[370px] h-[165px] w-[165px] rounded-[60px]"/><div className="absolute right-[-18px] top-6 text-[#1f5fff]">✦</div><div className="absolute right-[-50px] top-28 text-xl text-[#1f5fff]">•</div><div className="absolute right-[-55px] top-52 text-[#1f5fff]">★</div><div className="absolute right-[-45px] top-[300px] text-xl text-[#1f5fff]">•</div><div className="absolute right-[-55px] bottom-12 text-[#1f5fff]">×</div></Reveal>
+      <Reveal direction="right" className="hidden relative mx-auto mt-8 h-[560px] w-full max-w-[540px] lg:mt-0 lg:block"><div className="hero-orbit-ring absolute -inset-20 rounded-[50%] border border-white/15"/><div className="hero-orbit-ring hero-orbit-ring-delayed absolute -inset-5 rounded-[45%] border border-white/10"/><div className="hero-orbit-particle hero-orbit-particle-1 absolute -left-10 top-12 text-[#1f5fff]">✦</div><div className="hero-orbit-particle hero-orbit-particle-2 absolute left-[175px] top-[178px] text-xl text-[#1f5fff]">•</div><div className="hero-orbit-particle hero-orbit-particle-3 absolute -right-8 top-12 text-[#1f5fff]">★</div><div className="hero-orbit-particle hero-orbit-particle-4 absolute left-[170px] bottom-1 text-xl text-[#1f5fff]">•</div><div className="hero-orbit-particle hero-orbit-particle-5 absolute -right-7 bottom-16 text-[#1f5fff]">×</div><Portrait index={0} className="left-2 top-5 h-[350px] w-[165px] rounded-[70px]"/><Portrait index={1} className="left-[195px] top-5 h-[165px] w-[165px] rounded-[60px]"/><Portrait index={2} className="left-[195px] top-[205px] h-[350px] w-[165px] rounded-[70px]"/><Portrait index={3} className="right-0 top-[100px] h-[345px] w-[165px] rounded-[70px]"/><Portrait index={4} className="left-2 top-[370px] h-[165px] w-[165px] rounded-[60px]"/></Reveal>
       <div className="order-4 grid grid-cols-2 gap-3 mt-8 lg:hidden">
         {portraits.map((item, i) => (
           <Reveal key={item.name} direction="up" delay={i * 80} className={`relative overflow-hidden rounded-2xl border border-white/10 shadow-lg shadow-black/10 ${i === 4 ? "col-span-2 aspect-[21/9]" : "aspect-square"}`}>
-            <Image src="/autismia-children-strip.png" alt={item.name} width={2560} height={1024} quality={90} sizes="50vw" className={`absolute top-0 h-full w-[500%] max-w-none object-cover ${item.position}`}/>
+            <div role="img" aria-label={item.name} className={`absolute inset-0 bg-[url('/banner.png')] bg-no-repeat ${i === 4 ? "bg-[length:200%_auto] bg-[position:100%_78%]" : item.crop}`}/>
           </Reveal>
         ))}
       </div>
