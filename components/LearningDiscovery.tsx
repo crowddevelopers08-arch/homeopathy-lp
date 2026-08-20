@@ -32,7 +32,7 @@ export default function LearningDiscovery() {
         </h2>
       </Reveal>
 
-      <div className="mx-auto grid max-w-[1490px] items-center gap-10 sm:gap-14 lg:grid-cols-[1.08fr_.92fr] lg:gap-16">
+      <div className="mx-auto grid max-w-[1490px] items-center gap-0 sm:gap-14 lg:grid-cols-[1.08fr_.92fr] lg:gap-16">
         <Reveal direction="left" className="relative mx-auto h-[205px] w-full max-w-[700px] sm:h-[350px] lg:h-[335px]">
           <div className="absolute left-0 top-0 aspect-[3/2] w-[58%] overflow-hidden lg:w-[395px]">
             <FeatureImage
