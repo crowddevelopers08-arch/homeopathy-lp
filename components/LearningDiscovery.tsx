@@ -36,7 +36,7 @@ export default function LearningDiscovery() {
         <Reveal direction="left" className="relative mx-auto h-[205px] w-full max-w-[700px] sm:h-[350px] lg:h-[335px]">
           <div className="absolute left-0 top-0 aspect-[3/2] w-[58%] overflow-hidden lg:w-[395px]">
             <FeatureImage
-              src="/adhds.jpg"
+              src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228004/adhd.jpg"
               alt="A child receiving attentive support"
             />
           </div>

@@ -17,7 +17,7 @@ const highlights: Highlight[] = [
     title: "3 to 6 Month AVG Course",
     text: "ADHD care may require consistent follow-up over time. The duration can vary depending on the child’s needs, symptoms and response to treatment.",
     alt: "Doctor discussing ADHD care duration with a parent and child",
-    src: "/about-images-3.png",
+    src: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228017/final-cta.png",
   },
   {
     title: "98% Success Rate",
