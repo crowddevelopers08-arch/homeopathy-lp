@@ -42,7 +42,7 @@ export default function LearningDiscovery() {
           </div>
           <div className="learning-image-float absolute left-[42%] top-[35px] aspect-[3/2] w-[58%] overflow-hidden rounded-[5px] sm:top-[50px] lg:left-[288px] lg:top-[60px] lg:w-[393px]">
             <FeatureImage
-              src="/adhds1.jpg"
+              src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228027/adhds1.jpg"
               alt="A child learning with supportive guidance"
             />
           </div>

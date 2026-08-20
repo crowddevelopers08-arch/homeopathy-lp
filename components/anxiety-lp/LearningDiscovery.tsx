@@ -8,7 +8,7 @@ import BookingModal from "./BookingModal";
 function FeatureImage({ side, alt }: { side: "left" | "right"; alt: string }) {
   return (
     <Image
-      src="/about-clinic-1.png"
+      src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228003/about-clinic-1.png"
       alt={alt}
       width={1774}
       height={887}

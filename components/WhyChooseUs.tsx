@@ -25,20 +25,20 @@ const reasons = [
 
 const banners = [
   {
-    src: "/about-banner-1.png",
-    mobileSrc: "/about-mobil-1.png",
+    src: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228001/about-banner-1.png",
+    mobileSrc: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228004/about-mobil-1.png",
     alt: "A child showing signs of inattentiveness",
     title: "Predominantly Inattentive Presentation",
   },
   {
-    src: "/about-banner-2.png",
-    mobileSrc: "/about-mobil-2.png",
+    src: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228002/about-banner-2.png",
+    mobileSrc: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228010/about-mobil-2.png",
     alt: "A child showing hyperactive and impulsive behaviour",
     title: "Predominantly Hyperactive-Impulsive Presentation",
   },
   {
-    src: "/about-banner-3.png",
-    mobileSrc: "/about-mobil-3.png",
+    src: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228003/about-banner-3.png",
+    mobileSrc: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228008/about-mobil-3.png",
     alt: "A child showing combined ADHD behaviours",
     title: "Combined Presentation",
   },

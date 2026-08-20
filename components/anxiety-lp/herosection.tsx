@@ -223,7 +223,7 @@ export default function HeroSection() {
       {/* faint decorative background photos, tinted with the brand navy */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-[.08]">
         <Image
-          src="/bg.png"
+          src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228014/bg.png"
           alt=""
           fill
           quality={60}
@@ -499,7 +499,7 @@ export default function HeroSection() {
 
           <div className="absolute inset-[11%] overflow-hidden rounded-[63%_37%_54%_46%/43%_37%_63%_57%] bg-[linear-gradient(135deg,#000d44_0%,#1f5fff_100%)] shadow-[0_30px_60px_rgba(31,95,255,.35)]">
             <Image
-              src="/hero-image2.png"
+              src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228018/hero-image2.png"
               alt="A person finding calm"
               fill
               priority
@@ -583,7 +583,7 @@ export default function HeroSection() {
 
           <div className="absolute inset-[11%] overflow-hidden rounded-[63%_37%_54%_46%/43%_37%_63%_57%] bg-[linear-gradient(135deg,#000d44_0%,#1f5fff_100%)] shadow-[0_30px_60px_rgba(31,95,255,.35)]">
             <Image
-              src="/hero-image2.png"
+              src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228018/hero-image2.png"
               alt="A person finding calm"
               fill
               priority

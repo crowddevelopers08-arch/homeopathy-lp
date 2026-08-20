@@ -88,7 +88,7 @@ export default function AdhdFaq() {
             <span className="absolute -left-7 top-12 h-16 w-16 rounded-full border-[10px] border-[#1f5fff]/55"/>
             <span className="absolute -right-5 bottom-16 h-12 w-12 rounded-full bg-[#000d44]/25"/>
             <div className="relative h-full overflow-hidden rounded-[46%_54%_44%_56%/38%_42%_58%_62%] border-[7px] border-white shadow-[0_24px_55px_rgba(31,95,255,.2)]">
-              <Image src="/bg.png" alt="B Homeo doctor supporting a child during a consultation" fill sizes="(max-width: 1024px) 360px, 370px" quality={95} className="object-cover"/>
+              <Image src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228014/bg.png" alt="B Homeo doctor supporting a child during a consultation" fill sizes="(max-width: 1024px) 360px, 370px" quality={95} className="object-cover"/>
             </div>
           </Reveal>
 

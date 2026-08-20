@@ -31,7 +31,7 @@ export default function FinalCta() {
         <Reveal direction="right" className="relative hidden min-h-[360px] lg:block lg:min-h-full">
           <span className="absolute inset-y-8 left-0 z-10 hidden w-px bg-white/15 lg:block" />
           <div className="absolute inset-5 overflow-hidden rounded-[24px] sm:inset-7 lg:bottom-0 lg:left-8 lg:right-0 lg:top-0 lg:rounded-l-[45%] lg:rounded-r-none">
-            <Image src="/final-cts.png" alt="B Homeo doctor supporting a child during a consultation" fill sizes="(max-width: 1024px) 100vw, 620px" quality={95} className="object-cover object-center" />
+            <Image src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228019/final-cts.png" alt="B Homeo doctor supporting a child during a consultation" fill sizes="(max-width: 1024px) 100vw, 620px" quality={95} className="object-cover object-center" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#000d44]/25 via-transparent to-transparent" />
           </div>
         </Reveal>
@@ -46,7 +46,7 @@ export default function FinalCta() {
           </Reveal>
 
           <Reveal direction="right" className="relative mt-7 aspect-[4/3] w-full overflow-hidden rounded-[24px] sm:aspect-[16/9]">
-            <Image src="/final-cta.png" alt="B Homeo doctor supporting a child during a consultation" fill sizes="100vw" quality={95} className="object-cover object-center" />
+            <Image src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228017/final-cta.png" alt="B Homeo doctor supporting a child during a consultation" fill sizes="100vw" quality={95} className="object-cover object-center" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#000d44]/35 via-transparent to-transparent" />
           </Reveal>
 

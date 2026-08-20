@@ -30,7 +30,7 @@ function ServiceImage({ alt, position }: { alt: string; position: string }) {
   return (
     <div className="relative h-[263px] overflow-hidden">
       <Image
-        src="/treatment-process-strip.png"
+        src="https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228045/treatment-process-strip.png"
         alt={alt}
         width={2560}
         height={1024}

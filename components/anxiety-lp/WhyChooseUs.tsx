@@ -7,32 +7,32 @@ import BookingModal from "./BookingModal";
 const reasons = [
   {
     title: "Detailed Case Understanding & Root Cause Assessment",
-    image: "/images-1.png",
+    image: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228024/images-1.png",
     alt: "Doctor listening carefully during a detailed case history session",
   },
   {
     title: "Personalised Homeopathic Approach",
-    image: "/images-2.png",
+    image: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228027/images-2.png",
     alt: "Homeopathic remedies prepared for a personalised treatment plan",
   },
   {
     title: "Emotional & Lifestyle Factors Considered",
-    image: "/images-3.png",
+    image: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228030/images-3.png",
     alt: "Calm, supportive conversation about emotional and lifestyle wellbeing",
   },
   {
     title: "Doctor-Led Consultation & Guidance",
-    image: "/images-4.png",
+    image: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228032/images-4.png",
     alt: "B Homeo doctor guiding a patient through their consultation",
   },
   {
     title: "Online & Offline Consultation Available",
-    image: "/image-5.png",
+    image: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228025/image-5.png",
     alt: "Patient joining a consultation from home on a video call",
   },
   {
     title: "Follow-Up Every 15 Days",
-    image: "/images-6.png",
+    image: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228032/images-6.png",
     alt: "Doctor reviewing progress notes for a scheduled follow-up",
   },
 ];

@@ -17,31 +17,31 @@ const highlights: Highlight[] = [
     title: "Generalised Anxiety",
     text: "Persistent worry about everyday situations, often accompanied by restlessness, tension, and difficulty relaxing.",
     alt: "Person experiencing persistent everyday worry",
-    src: "/service-9.avif",
+    src: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228038/service-9.avif",
   },
   {
     title: "Panic Disorder",
     text: "Sudden episodes of intense fear or panic that may feel overwhelming and difficult to control.",
     alt: "Person going through a sudden episode of intense fear",
-    src: "/service-2.jpg",
+    src: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228033/service-2.jpg",
   },
   {
     title: "Social Anxiety",
     text: "Excessive fear or discomfort during social interactions, conversations, or public situations.",
     alt: "Person feeling discomfort during a social interaction",
-    src: "/service-8.jpg",
+    src: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228038/service-8.jpg",
   },
   {
     title: "Specific Phobias",
     text: "Strong fear responses towards specific situations, objects, or experiences.",
     alt: "Person reacting to a specific phobia trigger",
-    src: "/service-6.avif",
+    src: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228037/service-6.avif",
   },
   {
     title: "Anxiety Related Concerns",
     text: "Anxiety may also appear with overthinking, sleep difficulties, concentration issues, irritability, or constant uneasiness. ",
     alt: "Person reacting to a specific phobia trigger",
-    src: "/service-7.avif",
+    src: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228037/service-7.avif",
   },
 ];
 

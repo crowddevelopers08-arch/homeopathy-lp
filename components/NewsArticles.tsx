@@ -23,19 +23,19 @@ const highlights: Highlight[] = [
     title: "98% Success Rate",
     text: "B Homeo highlights a 98% success rate across its treatment approach, reflecting its experience in providing personalised homeopathic care.",
     alt: "Smiling student writing beside an open book",
-    src: "/about-images-4.jpg",
+    src: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787227997/about-images-4.jpg",
   },
   {
     title: "No Hidden Charges",
     text: "The first online consultation fee is fixed. Medicine charges, if applicable, are communicated by the doctor after consultation.",
     alt: "Children in a classroom",
-    src: "/about-images-2.avif",
+    src: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228003/about-images-2.avif",
   },
   {
     title: "Advanced Homeopathy Kit",
     text: "A structured homeopathic medicine approach designed to provide personalised support based on the child’s symptoms and overall assessment.",
     alt: "Prescribed homeopathic medicines delivered to a home",
-    src: "/about-images-3.avif",
+    src: "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228004/about-images-3.avif",
   },
 ];
 

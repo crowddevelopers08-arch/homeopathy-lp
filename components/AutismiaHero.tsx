@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import BookingModal from "./BookingModal";
 import Reveal from "./Reveal";
 
+const bannerImage = "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228011/banner.png";
+
 function AutismiaLogo() {
   return <a href="#" className="flex items-center gap-2 text-white no-underline" aria-label="Autismia home">
     <span><strong className="block text-[22px] leading-8 font-extrabold md:text-[29px] md:leading-5">B-Homeo Wellness</strong><small className="mt-1 block text-[14px] tracking-[.2px]">Acceptance • Understanding • Love</small></span>
@@ -21,7 +23,7 @@ const portraits = [
 
 function Portrait({ index, className }: { index: number; className: string }) {
   const item = portraits[index];
-  return <div role="img" aria-label={item.name} className={`absolute overflow-hidden bg-[url('/banner.png')] bg-no-repeat ${item.crop} ${className}`}/>;
+  return <div role="img" aria-label={item.name} style={{ backgroundImage: `url(${bannerImage})` }} className={`absolute overflow-hidden bg-no-repeat ${item.crop} ${className}`}/>;
 }
 
 const features = [
@@ -50,7 +52,7 @@ export default function AutismiaHero() {
   }, [menuOpen]);
 
   return <section className="relative min-h-[900px] overflow-hidden bg-[#000d44] font-sans text-white lg:min-h-screen">
-    <div className="absolute inset-0 overflow-hidden"><Image src="/banner.png" alt="" fill priority quality={90} sizes="100vw" className="hero-background-zoom object-cover object-center opacity-50"/><div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,13,68,.9)_0%,rgba(0,13,68,.76)_52%,rgba(0,13,68,.86)_100%)]"/><div className="absolute inset-0 bg-[radial-gradient(circle_at_67%_48%,transparent_0%,rgba(0,13,68,.22)_72%)]"/></div>
+    <div className="absolute inset-0 overflow-hidden"><Image src={bannerImage} alt="" fill priority quality={90} sizes="100vw" className="hero-background-zoom object-cover object-center opacity-50"/><div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,13,68,.9)_0%,rgba(0,13,68,.76)_52%,rgba(0,13,68,.86)_100%)]"/><div className="absolute inset-0 bg-[radial-gradient(circle_at_67%_48%,transparent_0%,rgba(0,13,68,.22)_72%)]"/></div>
 
     <header className="relative z-30 mx-auto flex h-[90px] max-w-[1380px] items-center justify-between px-6">
       <AutismiaLogo/>
@@ -123,7 +125,7 @@ export default function AutismiaHero() {
       <div className="order-4 grid grid-cols-2 gap-3 mt-8 lg:hidden">
         {portraits.map((item, i) => (
           <Reveal key={item.name} direction="up" delay={i * 80} className={`relative overflow-hidden rounded-2xl border border-white/10 shadow-lg shadow-black/10 ${i === 4 ? "col-span-2 aspect-[21/9]" : "aspect-square"}`}>
-            <div role="img" aria-label={item.name} className={`absolute inset-0 bg-[url('/banner.png')] bg-no-repeat ${i === 4 ? "bg-[length:200%_auto] bg-[position:100%_78%]" : item.crop}`}/>
+            <div role="img" aria-label={item.name} style={{ backgroundImage: `url(${bannerImage})` }} className={`absolute inset-0 bg-no-repeat ${i === 4 ? "bg-[length:200%_auto] bg-[position:100%_78%]" : item.crop}`}/>
           </Reveal>
         ))}
       </div>
