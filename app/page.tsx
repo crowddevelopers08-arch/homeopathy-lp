@@ -1,6 +1,5 @@
 import AutismiaHero from "@/components/AutismiaHero";
 import PlantServices from "@/components/PlantServices";
-import RoadmapInfographic from "@/components/RoadmapInfographic";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import KiddzoFooter from "@/components/KiddzoFooter";
 import LearningDiscovery from "@/components/LearningDiscovery";
