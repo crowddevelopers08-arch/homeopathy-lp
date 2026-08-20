@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Reveal from "./Reveal";
 
 function BHomeoLogo() {
@@ -11,7 +10,7 @@ function BHomeoLogo() {
       <span className="grid h-14 w-14 place-items-center rounded-2xl bg-[#1f5fff] text-[29px] font-extrabold text-white shadow-md shadow-[#1f5fff]/20">
         B
       </span>
-      <span className="text-[34px] font-extrabold tracking-[-1.5px] text-[#000d44]">
+      <span className="text-[34px] font-extrabold tracking-[-1.5px] text-white">
         B-<span className="text-[#1f5fff]">Homeo</span>
       </span>
     </a>
@@ -73,34 +72,27 @@ const socials = [
 
 export default function KiddzoFooter() {
   return (
-    <footer className="relative min-h-[325px] overflow-hidden bg-white font-sans text-black">
-      {/* Tablet & Desktop Background Image Only */}
-      <Image
-        src="/kiddzo-footer-landscape.png"
-        alt="Cheerful illustrated wellness landscape"
-        fill
-        sizes="100vw"
-        className="hidden object-cover object-bottom sm:block"
-      />
+    <footer className="relative overflow-hidden bg-[#000d44] font-sans text-white">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,rgba(31,95,255,.18)_0%,transparent_55%)]" />
 
-      <div className="relative z-10 mx-auto grid max-w-[1490px] grid-cols-2 gap-x-3 gap-y-6 max-sm:gap-y-3 px-6 pb-0 pt-10 sm:gap-3 sm:px-8 lg:grid-cols-[1.1fr_.8fr_.9fr_1.35fr] lg:gap-12 lg:pt-[36px] sm:[text-shadow:0_1px_3px_rgba(255,255,255,0.9),0_0_10px_rgba(255,255,255,0.75)]">
+      <div className="relative z-10 mx-auto grid max-w-[1490px] grid-cols-2 gap-x-6 gap-y-10 px-6 pb-12 pt-14 sm:gap-8 sm:px-8 lg:grid-cols-[1.3fr_.8fr_1fr] lg:gap-16 lg:pt-16">
         <Reveal
           as="section"
           direction="left"
           className="col-span-2 sm:col-span-1"
         >
           <BHomeoLogo />
-          <p className="mt-5 max-w-[300px] text-[16px] leading-[1.8]">
+          <p className="mt-5 max-w-[300px] text-[15px] leading-[1.8] text-white/60">
             We are India&apos;s No. 1 online homeopathy wellness hub.
           </p>
-          <div className="mt-6 max-sm:mt-2 flex gap-3">
+          <div className="mt-6 flex gap-3">
             {socials.map(({ type, label, href }) => (
               <a
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="grid h-10 w-10 place-items-center rounded-full bg-white text-[#1f5fff] shadow-sm transition-colors hover:bg-[#1f5fff] hover:text-white"
+                className="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-white/70 shadow-sm transition-colors hover:border-[#1f5fff] hover:bg-[#1f5fff] hover:text-white"
                 key={type}
               >
                 <SocialIcon type={type} />
@@ -110,80 +102,72 @@ export default function KiddzoFooter() {
         </Reveal>
 
         <Reveal as="nav" direction="up" delay={100} aria-label="Quick links">
-          <h3 className="text-[22px] max-sm:text-[20px] font-extrabold text-[#000d44]">
+          <h3 className="text-[14px] font-bold uppercase tracking-[1px] text-white">
             Quick Links
           </h3>
-          <ul className="mt-5 max-sm:mt-2 max-sm:space-y-1 space-y-3 text-[15px]">
+          <ul className="mt-5 space-y-3 text-[15px]">
             <li>
-              <a className="hover:text-[#1f5fff] max-sm:mb-1" href="#">
+              <a className="text-white/60 transition-colors hover:text-[#1f5fff]" href="#">
                 Home
               </a>
             </li>
             <li>
-              <a className="hover:text-[#1f5fff]" href="#about">
+              <a className="text-white/60 transition-colors hover:text-[#1f5fff]" href="#about">
                 About Us
               </a>
             </li>
             <li>
-              <a className="hover:text-[#1f5fff]" href="#programme">
+              <a className="text-white/60 transition-colors hover:text-[#1f5fff]" href="#programme">
                 ADHD Care
               </a>
             </li>
             <li>
-              <a className="hover:text-[#1f5fff]" href="#services">
+              <a className="text-white/60 transition-colors hover:text-[#1f5fff]" href="#services">
                 Services
               </a>
             </li>
             <li>
-              <a className="hover:text-[#1f5fff]" href="#faq">
+              <a className="text-white/60 transition-colors hover:text-[#1f5fff]" href="#faq">
                 FAQs
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-[#1f5fff]" href="#contact">
-                Contact
               </a>
             </li>
           </ul>
         </Reveal>
 
         <Reveal as="section" direction="up" delay={200} id="contact">
-          <h3 className="text-[22px] max-sm:text-[20px] font-extrabold text-[#000d44]">
+          <h3 className="text-[14px] font-bold uppercase tracking-[1px] text-white">
             Get In Touch
           </h3>
-          <div className="mt-5 max-sm:mt-2 space-y-4 max-sm:space-y-1 text-[15px] leading-6">
+          <div className="mt-5 space-y-4 text-[15px] leading-6">
             <p>
-              <span className="block font-bold text-[#000d44]">Address</span>
-              <span>
-                Near Jalna Mahanagarpalika, Jalna, Maharashtra – 431203
-              </span>
-            </p>
-            <p>
-              <span className="block font-bold text-[#000d44]">Email</span>
-              <a className="hover:text-[#1f5fff]" href="mailto:admin@bhomeo.in">
+              <span className="block font-semibold text-white">Email</span>
+              <a className="text-white/60 transition-colors hover:text-[#1f5fff]" href="mailto:admin@bhomeo.in">
                 admin@bhomeo.in
               </a>
             </p>
             <p>
-              <span className="block font-bold text-[#000d44]">Phone</span>
-              <a className="hover:text-[#1f5fff]" href="tel:+917719996771">
+              <span className="block font-semibold text-white">Phone</span>
+              <a className="text-white/60 transition-colors hover:text-[#1f5fff]" href="tel:+917719996771">
                 +91 7719996771
               </a>
             </p>
           </div>
         </Reveal>
       </div>
-      <div className="relative z-10 mt-8 mx-auto flex max-w-[1490px] flex-col items-center justify-between gap-2 px-10 pb-7 text-center sm:mt-2 sm:flex-row sm:px-38 sm:text-left sm:[text-shadow:0_1px_3px_rgba(255,255,255,0.9),0_0_10px_rgba(255,255,255,0.75)]">
-        <p className="text-[14px] sm:text-[16px]">
-          © 2026 <span className="font-semibold text-[#1f5fff]">B-Homeo.</span>{" "}
-          All rights reserved
-        </p>
-        <a
-          href="/privacy-policy"
-          className="text-[14px] font-medium text-[#000d44] hover:text-[#000d44] sm:text-[16px]"
-        >
-          Privacy Policy
-        </a>
+
+      <div className="relative z-10 border-t border-white/10">
+        <div className="mx-auto flex max-w-[1490px] flex-col items-center justify-between gap-2 px-6 py-6 text-center sm:flex-row sm:px-38 sm:text-left">
+          <p className="text-[13px] text-white/50">
+            © 2026 <span className="font-semibold text-[#1f5fff]">B-Homeo.</span>{" "}
+            All rights reserved
+          </p>
+          <a
+            href="/privacy-policy"
+            className="text-[13px] font-medium text-white/60 transition-colors hover:text-[#1f5fff]"
+          >
+            Privacy Policy
+          </a>
+        </div>
       </div>
     </footer>
   );
