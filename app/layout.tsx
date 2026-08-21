@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
+import Script from "next/script";
 import BackToTop from "@/components/BackToTop";
 import "./globals.css";
 
@@ -11,7 +12,7 @@ const poppins = Poppins({
 });
 
 // TODO: replace with your real production domain once deployed
-const SITE_URL = "https://www.bhomeo.in";
+const SITE_URL = "https://consultation.bhomeo.in/";
 const SITE_NAME = "B-Homeo Wellness";
 const SITE_TITLE = "B-Homeo Wellness | Online Homeopathy Consultation for ADHD & Child Development";
 const SITE_DESCRIPTION =
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: [
       {
-        url: "/og-image.png", // TODO: add a 1200x630 image at public/og-image.png
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: SITE_NAME,
@@ -97,7 +98,7 @@ export const viewport: Viewport = {
   themeColor: "#000d44",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
@@ -131,6 +132,20 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col overflow-x-hidden">
         {children}
         <BackToTop />
+        
+        {/* Google Ads (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18360214394"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18360214394');
+          `}
+        </Script>
       </body>
     </html>
   );
