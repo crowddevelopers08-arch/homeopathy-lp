@@ -28,7 +28,7 @@ export default function OurApproach() {
             HOW WE SUPPORT YOUR FAMILY
           </p> */}
           <h2 className="mt-3 text-[28px] font-extrabold leading-tight text-[#000d44] sm:text-[34px]">
-            Here are more information about adhd
+            Here are more information about ADHD
           </h2>
         </Reveal>
 
