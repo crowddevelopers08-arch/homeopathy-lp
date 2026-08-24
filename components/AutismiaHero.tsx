@@ -13,19 +13,6 @@ function AutismiaLogo() {
   </a>;
 }
 
-const portraits = [
-  { name: "A child finding it difficult to concentrate in class", crop: "bg-[length:auto_200%] bg-[position:18%_0%]" },
-  { name: "Four childhood behaviour and development scenarios", crop: "bg-cover bg-center" },
-  { name: "An active child jumping on a sofa", crop: "bg-[length:auto_200%] bg-[position:18%_100%]" },
-  { name: "A child practising speech with a caregiver", crop: "bg-[length:auto_200%] bg-[position:92%_0%]" },
-  { name: "A distressed child being supported by a caregiver", crop: "bg-[length:200%_200%] bg-[position:100%_100%]" },
-];
-
-function Portrait({ index, className }: { index: number; className: string }) {
-  const item = portraits[index];
-  return <div role="img" aria-label={item.name} style={{ backgroundImage: `url(${bannerImage})` }} className={`absolute overflow-hidden bg-no-repeat ${item.crop} ${className}`}/>;
-}
-
 const features = [
   "Root Cause Analysis",
   "Holistic Assessment of Your Child’s Nature, Fears, Dreams & Behaviour",
@@ -121,14 +108,20 @@ export default function AutismiaHero() {
         </Reveal>
       </div>
 
-      <Reveal direction="right" className="hidden relative mx-auto mt-8 h-[560px] w-full max-w-[540px] lg:mt-0 lg:block"><div className="hero-orbit-ring absolute -inset-20 rounded-[50%] border border-white/15"/><div className="hero-orbit-ring hero-orbit-ring-delayed absolute -inset-5 rounded-[45%] border border-white/10"/><div className="hero-orbit-particle hero-orbit-particle-1 absolute -left-10 top-12 text-[#1f5fff]">✦</div><div className="hero-orbit-particle hero-orbit-particle-2 absolute left-[175px] top-[178px] text-xl text-[#1f5fff]">•</div><div className="hero-orbit-particle hero-orbit-particle-3 absolute -right-8 top-12 text-[#1f5fff]">★</div><div className="hero-orbit-particle hero-orbit-particle-4 absolute left-[170px] bottom-1 text-xl text-[#1f5fff]">•</div><div className="hero-orbit-particle hero-orbit-particle-5 absolute -right-7 bottom-16 text-[#1f5fff]">×</div><Portrait index={0} className="left-2 top-5 h-[350px] w-[165px] rounded-[70px]"/><Portrait index={1} className="left-[195px] top-5 h-[165px] w-[165px] rounded-[60px]"/><Portrait index={2} className="left-[195px] top-[205px] h-[350px] w-[165px] rounded-[70px]"/><Portrait index={3} className="right-0 top-[100px] h-[345px] w-[165px] rounded-[70px]"/><Portrait index={4} className="left-2 top-[370px] h-[165px] w-[165px] rounded-[60px]"/></Reveal>
-      <div className="order-4 grid grid-cols-2 gap-3 mt-8 lg:hidden">
-        {portraits.map((item, i) => (
-          <Reveal key={item.name} direction="up" delay={i * 80} className={`relative overflow-hidden rounded-2xl border border-white/10 shadow-lg shadow-black/10 ${i === 4 ? "col-span-2 aspect-[21/9]" : "aspect-square"}`}>
-            <div role="img" aria-label={item.name} style={{ backgroundImage: `url(${bannerImage})` }} className={`absolute inset-0 bg-no-repeat ${i === 4 ? "bg-[length:200%_auto] bg-[position:100%_78%]" : item.crop}`}/>
-          </Reveal>
-        ))}
-      </div>
+      <Reveal direction="right" className="order-4 relative mx-auto mt-8 w-full max-w-[680px] lg:order-none lg:mt-14 lg:w-full lg:max-w-[620px]">
+        <div className="pointer-events-none absolute -inset-4 rounded-[28px] border border-white/10 bg-white/5 backdrop-blur-sm lg:-inset-5" />
+        <div className="relative aspect-video overflow-hidden rounded-[18px] border border-white/20 bg-black shadow-[0_24px_70px_rgba(0,0,0,.38)]">
+          <iframe
+            className="absolute inset-0 h-full w-full"
+            src="https://www.youtube-nocookie.com/embed/5kVCKXyCSf0?autoplay=1&mute=1&playsinline=1&rel=0"
+            title="B-Homeo Wellness ADHD care video"
+            loading="eager"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
+      </Reveal>
       <Reveal direction="up" className="order-7 mt-8 -mx-6 overflow-hidden sm:hidden">
         <ul className="marquee-track flex w-max gap-3 px-6 text-[13px] leading-5 font-semibold text-white">
           {[...features, ...features].map((text, i) => <FeatureCard key={i} text={text}/>)}
