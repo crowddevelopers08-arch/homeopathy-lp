@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import BookingModal from "./BookingModal";
+import ConsultationButton from "../ConsultationButton";
 
 const reasons = [
   {
@@ -83,40 +84,7 @@ export default function WhyChooseUs() {
       </div>
 
 <div className="mt-12 max-sm:mt-6 flex justify-center px-6">
-  <button
-    type="button"
-    onClick={() => setBookingOpen(true)}
-    className="group relative inline-flex items-center justify-center rounded-[10px] bg-[#1f5fff] px-6 py-3.5 text-center text-[14px] font-semibold text-white shadow-lg shadow-[#1f5fff]/20 transition-opacity hover:opacity-90 sm:px-8"
-  >
-    <svg
-      className="pointer-events-none absolute inset-0 h-full w-full overflow-visible"
-      aria-hidden="true"
-    >
-      <rect
-        x="7"
-        y="7"
-        rx="7"
-        fill="none"
-        stroke="white"
-        strokeWidth="2"
-        strokeDasharray="10 7"
-        className="button-running-dash"
-        style={{
-          width: "calc(100% - 14px)",
-          height: "calc(100% - 14px)",
-        }}
-      />
-    </svg>
-
-    <span className="relative z-10">
-      <span className="hidden sm:inline">
-        Take The First Step Towards Personalised Care
-      </span>
-      <span className="sm:hidden">
-        Start Your Care Journey
-      </span>
-    </span>
-  </button>
+  <ConsultationButton onClick={() => setBookingOpen(true)} />
 </div>
 
       <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />

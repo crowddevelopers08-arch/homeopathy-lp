@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Reveal from "./Reveal";
 import BookingModal from "./BookingModal";
+import ConsultationButton from "../ConsultationButton";
 
 const services = [
   {
@@ -127,10 +128,7 @@ export default function PlantServices() {
         </div>
 
         <div className="mx-auto flex max-w-[1320px] justify-center max-sm:pb-0 py-10">
-          <button type="button" onClick={() => setBookingOpen(true)} className="group relative inline-flex rounded-[10px] bg-[#1f5fff] px-8 py-3.5 text-[14px] font-semibold text-white shadow-lg shadow-[#1f5fff]/20 transition-opacity hover:opacity-90">
-            <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true"><rect x="7" y="7" rx="7" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{width:"calc(100% - 14px)",height:"calc(100% - 14px)"}}/></svg>
-            <span className="relative z-10">Get Started Today</span>
-          </button>
+          <ConsultationButton onClick={() => setBookingOpen(true)} />
         </div>
       </div>
 

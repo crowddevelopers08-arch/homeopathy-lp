@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import BookingModal from "./BookingModal";
+import ConsultationButton from "../ConsultationButton";
 
 
 function Chevron() {
@@ -448,33 +449,7 @@ export default function HeroSection() {
             triggers behind your anxiety.
           </p>
 
-          <button
-            type="button"
-            onClick={() => setAppointmentOpen(true)}
-            className="group relative mt-9 inline-flex items-center justify-center rounded-[10px] bg-[#1f5fff] px-8 py-4 text-[15px] font-bold text-white shadow-lg shadow-[#1f5fff]/20 transition-opacity hover:opacity-90"
-          >
-            <svg
-              className="pointer-events-none absolute inset-0 h-full w-full overflow-visible"
-              aria-hidden="true"
-            >
-              <rect
-                x="7"
-                y="7"
-                rx="7"
-                fill="none"
-                stroke="white"
-                strokeWidth="2"
-                strokeDasharray="10 7"
-                className="button-running-dash"
-                style={{
-                  width: "calc(100% - 14px)",
-                  height: "calc(100% - 14px)",
-                }}
-              />
-            </svg>
-
-            <span className="relative z-10">{active.cta}</span>
-          </button>
+          <ConsultationButton onClick={() => setAppointmentOpen(true)} className="mt-9" />
         </div>
 
         <div
@@ -617,33 +592,7 @@ export default function HeroSection() {
           triggers behind your anxiety.
         </p>
         <div className="flex justify-center">
-          <button
-            type="button"
-            onClick={() => setAppointmentOpen(true)}
-            className="group relative mt-5 inline-flex items-center justify-center rounded-[10px] bg-[#1f5fff] px-8 py-4 text-[15px] font-bold text-white shadow-lg shadow-[#1f5fff]/20 transition-opacity hover:opacity-90"
-          >
-            <svg
-              className="pointer-events-none absolute inset-0 h-full w-full overflow-visible"
-              aria-hidden="true"
-            >
-              <rect
-                x="7"
-                y="7"
-                rx="7"
-                fill="none"
-                stroke="white"
-                strokeWidth="2"
-                strokeDasharray="10 7"
-                className="button-running-dash"
-                style={{
-                  width: "calc(100% - 14px)",
-                  height: "calc(100% - 14px)",
-                }}
-              />
-            </svg>
-
-            <span className="relative z-10">{active.cta}</span>
-          </button>
+          <ConsultationButton onClick={() => setAppointmentOpen(true)} className="mt-5" />
         </div>
       </div>
 

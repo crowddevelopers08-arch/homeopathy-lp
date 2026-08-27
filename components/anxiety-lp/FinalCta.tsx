@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Reveal from "./Reveal";
 import BookingModal from "./BookingModal";
+import ConsultationButton from "../ConsultationButton";
 
 export default function FinalCta() {
   const [bookingOpen, setBookingOpen] = useState(false);
@@ -20,12 +21,7 @@ export default function FinalCta() {
           <h2 className="mt-5 max-w-[650px] text-[30px] leading-[1.25] font-extrabold sm:text-[38px] lg:text-[44px]">
             Take The First Step Towards <span className="text-[#1f5fff]"> Better Emotional Wellbeing</span>
           </h2>
-          <button type="button" onClick={() => setBookingOpen(true)} className="group relative mt-8 inline-flex rounded-[10px] bg-[#1f5fff] px-8 py-3.5 text-[14px] font-semibold text-white shadow-lg shadow-[#1f5fff]/20 transition-opacity hover:opacity-90">
-            <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true">
-              <rect x="7" y="7" rx="7" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{ width: "calc(100% - 14px)", height: "calc(100% - 14px)" }} />
-            </svg>
-            <span className="relative z-10">Book Your Consultation Today </span>
-          </button>
+          <ConsultationButton onClick={() => setBookingOpen(true)} className="mt-8" />
         </Reveal>
 
         <Reveal direction="right" className="relative hidden min-h-[360px] lg:block lg:min-h-full">
@@ -51,12 +47,7 @@ export default function FinalCta() {
           </Reveal>
 
           <Reveal direction="up" className="flex max-sm:justify-center">
-            <button type="button" onClick={() => setBookingOpen(true)} className="group relative mt-7 inline-flex rounded-[10px] bg-[#1f5fff] px-8 py-3.5 text-[14px] font-semibold text-white shadow-lg shadow-[#1f5fff]/20 transition-opacity hover:opacity-90">
-              <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true">
-                <rect x="7" y="7" rx="7" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{ width: "calc(100% - 14px)", height: "calc(100% - 14px)" }} />
-              </svg>
-              <span className="relative z-10">Start with a Consultation</span>
-            </button>
+            <ConsultationButton onClick={() => setBookingOpen(true)} className="mt-7" />
           </Reveal>
         </div>
       </div>

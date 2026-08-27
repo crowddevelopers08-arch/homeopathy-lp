@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import BookingModal from "./BookingModal";
+import ConsultationButton from "./ConsultationButton";
 import Reveal from "./Reveal";
 
 type Highlight = {
@@ -126,14 +127,7 @@ export default function NewsArticles() {
         </div>
 
         <Reveal direction="up" className="mt-14 max-sm:mt-6 flex justify-center">
-          <button
-            type="button"
-            onClick={() => setBookingOpen(true)}
-            className="group relative inline-flex rounded-[10px] bg-[#1f5fff] px-8 py-3.5 text-[14px] font-semibold text-white shadow-lg shadow-black/10 transition-opacity hover:opacity-90"
-          >
-            <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true"><rect x="7" y="7" rx="7" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{width:"calc(100% - 14px)",height:"calc(100% - 14px)"}}/></svg>
-            <span className="relative z-10">Book a Consultation</span>
-          </button>
+          <ConsultationButton onClick={() => setBookingOpen(true)} />
         </Reveal>
       </div>
 

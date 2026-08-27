@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import BookingModal from "./BookingModal";
+import ConsultationButton from "./ConsultationButton";
 import Reveal from "./Reveal";
 
 const bannerImage = "https://res.cloudinary.com/x6ec5hqm/image/upload/v1787228011/banner.png";
@@ -100,12 +101,13 @@ export default function AutismiaHero() {
             </div>
           </div>
         </Reveal>
-        <Reveal direction="up" delay={400} className="order-6 mt-6 max-sm:mt-3 justify-start max-sm:justify-center">
-          <button type="button" onClick={() => setBookingOpen(true)} className="group relative inline-flex rounded-[10px] bg-[#1f5fff] px-7 py-3.5 text-[14px] font-semibold shadow-lg shadow-black/10 transition-opacity hover:opacity-90">
-            <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true"><rect x="7" y="7" rx="7" fill="none" stroke="white" strokeWidth="2" strokeDasharray="10 7" className="button-running-dash" style={{width:"calc(100% - 14px)",height:"calc(100% - 14px)"}}/></svg>
-            <span className="relative z-10">Book a Consultation</span>
-          </button>
-        </Reveal>
+<Reveal
+  direction="up"
+  delay={400}
+  className="order-6 mt-6 flex justify-start max-sm:mt-3 max-sm:justify-center"
+>
+  <ConsultationButton onClick={() => setBookingOpen(true)} />
+</Reveal>
       </div>
 
       <Reveal direction="right" className="order-4 relative mx-auto mt-8 w-full max-w-[680px] lg:order-none lg:mt-14 lg:w-full lg:max-w-[620px]">
