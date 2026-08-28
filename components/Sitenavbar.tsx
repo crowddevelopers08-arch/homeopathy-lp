@@ -13,32 +13,34 @@ function BrandLogo() {
 
 export default function SiteNavbar() {
   return (
-    <header className="relative z-30 mx-auto flex w-full max-w-[1480px] flex-nowrap items-center justify-between gap-3 px-4 py-4 sm:px-8 sm:py-0 sm:h-[80px] lg:px-16">
-      <BrandLogo />
+    <header className="sticky top-0 z-30 w-full border-b border-white/10 bg-[#000d44]/85 shadow-[0_8px_30px_-15px_rgba(0,0,0,.6)] backdrop-blur-md supports-[backdrop-filter]:bg-[#000d44]/70">
+      <div className="mx-auto flex w-full max-w-[1480px] flex-nowrap items-center justify-between gap-3 px-4 py-4 sm:px-8 sm:py-0 sm:h-[80px] lg:px-16">
+        <BrandLogo />
 
-      <Link
-        href="/"
-        className="group relative inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#1f5fff] px-3.5 py-3 text-[13px] font-semibold text-white shadow-lg shadow-black/10 transition-opacity hover:opacity-90 sm:px-7 sm:py-3.5 sm:text-[14px]"
-      >
-        <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true">
-          <rect
-            x="7"
-            y="7"
-            rx="8"
-            fill="none"
-            stroke="white"
-            strokeWidth="2"
-            strokeDasharray="10 7"
-            className="button-running-dash"
-            style={{ width: "calc(100% - 14px)", height: "calc(100% - 14px)" }}
-          />
-        </svg>
-        <svg viewBox="0 0 24 24" className="relative z-10 h-4 w-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M19 12H5" />
-          <path d="M11 18l-6-6 6-6" />
-        </svg>
-        <span className="relative z-10 hidden sm:inline">Back to Home</span>
-      </Link>
+        <Link
+          href="/"
+          className="group relative inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#1f5fff] px-3.5 py-3 text-[13px] font-semibold text-white shadow-lg shadow-black/10 transition-opacity hover:opacity-90 sm:px-7 sm:py-3.5 sm:text-[14px]"
+        >
+          <svg className="pointer-events-none absolute inset-0 h-full w-full overflow-visible" aria-hidden="true">
+            <rect
+              x="7"
+              y="7"
+              rx="8"
+              fill="none"
+              stroke="white"
+              strokeWidth="2"
+              strokeDasharray="10 7"
+              className="button-running-dash"
+              style={{ width: "calc(100% - 14px)", height: "calc(100% - 14px)" }}
+            />
+          </svg>
+          <svg viewBox="0 0 24 24" className="relative z-10 h-4 w-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M19 12H5" />
+            <path d="M11 18l-6-6 6-6" />
+          </svg>
+          <span className="relative z-10 hidden sm:inline">Back to Home</span>
+        </Link>
+      </div>
     </header>
   );
 }

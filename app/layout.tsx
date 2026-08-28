@@ -102,7 +102,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${poppins.variable} h-full overflow-x-hidden antialiased`}
+      className={`${poppins.variable} h-full overflow-x-clip antialiased`}
     >
       <head>
         <script
@@ -149,7 +149,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col overflow-x-hidden">
+      <body className="min-h-full flex flex-col overflow-x-clip">
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

@@ -161,12 +161,26 @@ export default function KiddzoFooter() {
             © 2026 <span className="font-semibold text-[#1f5fff]">B-Homeo.</span>{" "}
             All rights reserved
           </p>
-          <a
-            href="/anxiety/privacy-policy"
-            className="text-[13px] font-medium text-white/60 transition-colors hover:text-[#1f5fff]"
-          >
-            Privacy Policy
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 sm:justify-end">
+            <a
+              href="/anxiety/privacy-policy"
+              className="text-[13px] font-medium text-white/60 transition-colors hover:text-[#1f5fff]"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="/anxiety/terms-and-conditions"
+              className="text-[13px] font-medium text-white/60 transition-colors hover:text-[#1f5fff]"
+            >
+              Terms &amp; Conditions
+            </a>
+            <a
+              href="/anxiety/cancellation-and-refund"
+              className="text-[13px] font-medium text-white/60 transition-colors hover:text-[#1f5fff]"
+            >
+              Cancellation &amp; Refund
+            </a>
+          </div>
         </div>
       </div>
     </footer>
