@@ -2,12 +2,22 @@ import GoogleConversionTracker from "@/components/anxiety-lp/googleConversionTra
 import SiteFooter from "@/components/anxiety-lp/Sitefooter";
 import SiteNavbar from "@/components/anxiety-lp/Sitenavbar";
 import Link from "next/link";
+import Script from "next/script";
 
 export default function ThankYouPage() {
   return (
     <div className="flex min-h-screen flex-col bg-[#000d44] font-sans text-white">
       <GoogleConversionTracker />
       <SiteNavbar />
+
+      {/* Google Ads Conversion Tracking - Submit Lead */}
+      <Script id="google-ads-conversion-thankyou" strategy="afterInteractive">
+        {`
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18360214394/6x1sCI3gqOkcEPrG6rJE'
+          });
+        `}
+      </Script>
 
       <main className="relative flex flex-1 items-center justify-center overflow-hidden px-6 py-16">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(31,95,255,.18)_0%,transparent_60%)]" />
