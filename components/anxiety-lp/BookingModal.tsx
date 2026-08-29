@@ -41,6 +41,9 @@ export default function BookingModal({ open, onClose }: { open: boolean; onClose
 
   useEffect(() => {
     if (!open) return;
+    // Warm the Razorpay Checkout script while the visitor fills the form, so it
+    // is already loaded by the time they submit.
+    void loadRazorpayCheckout().catch(() => {});
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") handleClose();
     };
@@ -51,17 +54,17 @@ export default function BookingModal({ open, onClose }: { open: boolean; onClose
 
   if (!open) return null;
 
-  async function startPayment() {
+  async function startPayment(leadReq: Promise<{ success?: boolean; error?: string }> | null) {
     setError("");
     settledRef.current = false;
-    setPhase("paying");
+    if (!leadReq) setPhase("paying");
 
     const { name, phone, email } = leadRef.current;
 
     try {
-      await loadRazorpayCheckout();
-
-      const orderRes = await fetch("/api/razorpay/create-order", {
+      // Lead save, order creation and the checkout-script load all run together
+      // instead of one after another.
+      const orderReq = fetch("/api/razorpay/create-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -72,9 +75,24 @@ export default function BookingModal({ open, onClose }: { open: boolean; onClose
           pageUrl: window.location.href,
         }),
       });
+
+      const [orderRes, , leadData] = await Promise.all([
+        orderReq,
+        loadRazorpayCheckout(),
+        leadReq ?? Promise.resolve(null),
+      ]);
+
+      if (leadReq) {
+        if (!leadData?.success) {
+          throw new Error(leadData?.error || "Could not save your details. Please try again.");
+        }
+        leadSavedRef.current = true;
+      }
+
       const order = await orderRes.json();
       if (!orderRes.ok) throw new Error(order?.error || "Could not start the payment.");
       if (!window.Razorpay) throw new Error("Could not load the payment window.");
+      setPhase("paying");
 
       const checkout = new window.Razorpay({
         key: order.keyId,
@@ -155,37 +173,27 @@ export default function BookingModal({ open, onClose }: { open: boolean; onClose
 
     // Payment retry — the lead is already saved, go straight to Checkout.
     if (leadSavedRef.current) {
-      await startPayment();
+      await startPayment(null);
       return;
     }
 
+    // Fire the lead save now; startPayment awaits it alongside order creation.
     setPhase("submitting");
-    try {
-      const res = await fetch("/api/submissions", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          source: SOURCE,
-          name,
-          phone,
-          email,
-          pageUrl: window.location.href,
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok || !data.success) {
-        setPhase("idle");
-        setError(data.error || "Something went wrong. Please try again.");
-        return;
-      }
+    const leadReq: Promise<{ success?: boolean; error?: string }> = fetch("/api/submissions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        source: SOURCE,
+        name,
+        phone,
+        email,
+        pageUrl: window.location.href,
+      }),
+    })
+      .then((r) => r.json())
+      .catch(() => ({ success: false, error: "Network error saving your details. Please try again." }));
 
-      // Non-payment lead is captured. Move on to the payment step.
-      leadSavedRef.current = true;
-      await startPayment();
-    } catch (err) {
-      setPhase("idle");
-      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
-    }
+    await startPayment(leadReq);
   }
 
   return (

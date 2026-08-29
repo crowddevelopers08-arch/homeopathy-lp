@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse, after } from 'next/server';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -270,52 +270,47 @@ export async function POST(req: NextRequest) {
     }
 
     const timestamp = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
-    const telecrmResult = await pushToTeleCRM(body);
-    const telecrmStatus = getTelecrmStatus(telecrmResult);
-    const row = [
-      timestamp,
-      body.source,
-      body.name,
-      body.phone,
-      body.email,
-      body.pageUrl,
-      telecrmStatus,
-    ];
 
-    try {
-      appendLocalRow(row);
-    } catch (csvErr) {
-      console.warn('Local CSV save skipped:', (csvErr as Error).message);
-    }
+    // TeleCRM and Google Sheets each cost a network round-trip and neither
+    // affects what the visitor needs to see next. Run them after the response
+    // is flushed so the form returns as soon as the payload is validated.
+    after(async () => {
+      let telecrmStatus = 'Not configured';
+      try {
+        telecrmStatus = getTelecrmStatus(await pushToTeleCRM(body));
+      } catch (crmErr) {
+        console.warn('TeleCRM sync failed:', (crmErr as Error).message);
+        telecrmStatus = 'Failed';
+      }
 
-    let excelStatus = getSheetWebhookUrl() ? 'failed' : 'not_configured';
-    let excelError = '';
-    try {
-      const sheetResult = await pushToSheet(body, timestamp, telecrmStatus);
-      if (sheetResult !== null) excelStatus = 'synced';
-    } catch (gasErr) {
-      excelError = (gasErr as Error).message;
-      console.warn('Google Apps Script sync skipped:', excelError);
-    }
+      const row = [
+        timestamp,
+        body.source,
+        body.name,
+        body.phone,
+        body.email,
+        body.pageUrl,
+        telecrmStatus,
+      ];
 
-    if (excelStatus === 'failed') {
-      return NextResponse.json(
-        {
-          success: false,
-          error: excelError || 'Unable to save the submission to Google Sheets.',
-          excel: excelStatus,
-          telecrm: telecrmResult,
-        },
-        { status: 502 },
-      );
-    }
+      try {
+        appendLocalRow(row);
+      } catch (csvErr) {
+        console.warn('Local CSV save skipped:', (csvErr as Error).message);
+      }
 
-    return NextResponse.json({
-      success: true,
-      excel: excelStatus,
-      excelError,
-      telecrm: telecrmResult,
+      if (!getSheetWebhookUrl()) {
+        console.warn('Google Apps Script sync skipped: GOOGLE_APPS_SCRIPT_URL not set');
+        return;
+      }
+      try {
+        await pushToSheet(body, timestamp, telecrmStatus);
+      } catch (gasErr) {
+        console.error('Google Apps Script sync failed:', (gasErr as Error).message);
+      }
     });
+
+    return NextResponse.json({ success: true, queued: true });
   } catch (err) {
     console.error('Submission error:', err);
     return NextResponse.json({ success: false, error: 'Server error' }, { status: 500 });
