@@ -131,6 +131,19 @@ async function pushToSheet(payment: RazorpayPayment, event: string, flow: Flow) 
 }
 
 // ── TeleCRM (same shape as /api/submissions) ─────────────────────────────────
+// The key must be the field's API Name in TeleCRM ("form_url"), not the
+// "Form url" label shown on the lead. Its Length Range caps the value at 102
+// characters — anything longer is rejected and the field stays empty.
+const TELECRM_FORM_URL_FIELD = (process.env.TELECRM_FORM_URL_FIELD || "form_url").trim();
+const TELECRM_FORM_URL_MAX = 102;
+
+// `notes.source` carries the page URL when the browser sent one, and falls back
+// to the flow label otherwise — only a real URL belongs in the Form url field.
+function formUrlFromNotes(payment: RazorpayPayment) {
+  const source = payment.notes?.source?.trim() || "";
+  return /^https?:\/\//i.test(source) ? source.slice(0, TELECRM_FORM_URL_MAX) : "";
+}
+
 async function pushToTeleCRM(payment: RazorpayPayment, event: string) {
   const url = process.env.TELECRM_API_URL;
   const key = process.env.TELECRM_API_KEY;
@@ -147,7 +160,12 @@ async function pushToTeleCRM(payment: RazorpayPayment, event: string) {
   const timeout = setTimeout(() => controller.abort(), 15000);
 
   const payload = {
-    fields: { phone, name: payerName(payment), email: payerEmail(payment) },
+    fields: {
+      phone,
+      name: payerName(payment),
+      email: payerEmail(payment),
+      ...(formUrlFromNotes(payment) ? { [TELECRM_FORM_URL_FIELD]: formUrlFromNotes(payment) } : {}),
+    },
     actions: [
       {
         type: "SYSTEM_NOTE",

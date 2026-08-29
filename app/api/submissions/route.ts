@@ -132,6 +132,20 @@ async function pushToSheet(body: SubmissionBody, timestamp: string, telecrmStatu
   return result;
 }
 
+// TeleCRM fills a custom field only when `fields` carries the field's API Name
+// (Settings → Fields → Form url → Information → API Name), not its display
+// label — SYSTEM_NOTEs land in Activity History and leave the field empty.
+const TELECRM_FORM_URL_FIELD = (process.env.TELECRM_FORM_URL_FIELD || 'form_url').trim();
+
+// That field's Length Range is capped at 102 characters in TeleCRM; a longer
+// value is rejected and the field stays empty. Raise the cap in TeleCRM (and
+// this number) if the full URL with its UTM parameters needs to be stored.
+const TELECRM_FORM_URL_MAX = 102;
+
+function formUrlForTeleCRM(pageUrl: string) {
+  return pageUrl.trim().slice(0, TELECRM_FORM_URL_MAX);
+}
+
 function normalizePhoneForTeleCRM(phone: string) {
   const digits = phone.replace(/\D/g, '');
   if (digits.length === 10) return `91${digits}`;
@@ -170,7 +184,12 @@ async function pushToTeleCRM(body: SubmissionBody): Promise<TelecrmResponse | nu
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 15000);
 
-  const fields: Record<string, string> = { phone, name: body.name, email: body.email };
+  const fields: Record<string, string> = {
+    phone,
+    name: body.name,
+    email: body.email,
+    ...(body.pageUrl ? { [TELECRM_FORM_URL_FIELD]: formUrlForTeleCRM(body.pageUrl) } : {}),
+  };
 
   const details = [
     `Form Name: ${body.source || 'Website'}`,
@@ -242,7 +261,7 @@ async function pushToTeleCRM(body: SubmissionBody): Promise<TelecrmResponse | nu
       synced: confirmed,
       statusCode: res.status,
       leadId: data.leadId || data.id || data.LeadID || null,
-      note: confirmed ? 'TeleCRM did not confirm lead creation' : 'TeleCRM lead confirmed',
+      note: confirmed ? 'TeleCRM lead confirmed' : 'TeleCRM did not confirm lead creation',
     };
   } catch (err) {
     clearTimeout(timeout);
