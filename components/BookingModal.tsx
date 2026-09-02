@@ -18,6 +18,7 @@ const FLOW = "homeo" as const;
 const SOURCE = "Homeo-Form-Leads";
 const THANK_YOU_URL = "/thank-you";
 const FEE_DISPLAY = "₹199";
+const PRODUCT = "Online Homeopathy Consultation";
 
 export default function BookingModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [phase, setPhase] = useState<Phase>("idle");
@@ -120,6 +121,21 @@ export default function BookingModal({ open, onClose }: { open: boolean; onClose
             if (!verifyRes.ok || !result.verified) {
               throw new Error(result?.error || "We could not verify your payment.");
             }
+            // Hand the confirmed purchase to the thank-you page so it can fire
+            // the "Purchased" conversion event once, with the real amount and a
+            // transaction id (used for Meta/GA4 de-duplication).
+            try {
+              sessionStorage.setItem(
+                "bh_purchase",
+                JSON.stringify({
+                  value: Number(order.amount) / 100,
+                  currency: order.currency || "INR",
+                  transactionId: result.paymentId || response.razorpay_payment_id,
+                  orderId: result.orderId || response.razorpay_order_id,
+                  item: PRODUCT,
+                }),
+              );
+            } catch {}
             // Full document load (not client nav) so the thank-you page fires
             // its GTM / Google Ads / Meta Pixel conversion events fresh.
             // eslint-disable-next-line @next/next/no-location-assign-relative-destination

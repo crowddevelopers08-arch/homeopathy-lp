@@ -1,4 +1,5 @@
 import GoogleConversionTracker from "@/components/anxiety-lp/googleConversionTracker";
+import PurchaseTracking from "@/components/PurchaseTracking";
 import SiteFooter from "@/components/anxiety-lp/Sitefooter";
 import SiteNavbar from "@/components/anxiety-lp/Sitenavbar";
 import Link from "next/link";
@@ -7,6 +8,7 @@ import Script from "next/script";
 export default function ThankYouPage() {
   return (
     <div className="flex min-h-screen flex-col bg-[#000d44] font-sans text-white">
+      <PurchaseTracking item="Anxiety Homeopathy Consultation" />
       <GoogleConversionTracker />
       <SiteNavbar />
 

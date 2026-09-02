@@ -1,3 +1,4 @@
+import PurchaseTracking from "@/components/PurchaseTracking";
 import SiteFooter from "@/components/Sitefooter";
 import SiteNavbar from "@/components/Sitenavbar";
 import Link from "next/link";
@@ -5,6 +6,7 @@ import Link from "next/link";
 export default function ThankYouPage() {
   return (
     <div className="flex min-h-screen flex-col bg-[#000d44] font-sans text-white">
+      <PurchaseTracking item="Online Homeopathy Consultation" />
       <SiteNavbar />
 
       <main className="relative flex flex-1 items-center justify-center overflow-hidden px-6 py-8">
