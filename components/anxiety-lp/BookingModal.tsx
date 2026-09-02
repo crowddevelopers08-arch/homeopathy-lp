@@ -136,7 +136,7 @@ export default function BookingModal({ open, onClose }: { open: boolean; onClose
                 }),
               );
             } catch {}
-            // Full document load (not client nav) so the thank-you page fires
+            // Full document load (not client nav) so  thank-you page fires
             // its GTM / Google Ads / Meta Pixel conversion events fresh.
             // eslint-disable-next-line @next/next/no-location-assign-relative-destination
             window.location.href = THANK_YOU_URL;
