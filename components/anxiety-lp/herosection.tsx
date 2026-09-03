@@ -194,7 +194,7 @@ const navLinks = [
 
 const slides = [
   {
-    eyebrow: "FIRST CONSULTATION ₹499 ONLY",
+    // eyebrow: "FIRST CONSULTATION ₹499 ONLY",
     heading:
       "Is Acidity, Palpitation, Chest Discomfort & Fear of Illness Taking Over ",
     highlight: " Your Peace?",
@@ -414,9 +414,9 @@ export default function HeroSection() {
       {/* Desktop / tablet — unchanged, side-by-side layout */}
       <div className="relative z-10 mx-auto hidden max-w-[1440px] grid-cols-1 items-center gap-10 px-6 pb-6 pt-6 lg:grid lg:grid-cols-2 lg:gap-8 lg:px-10 lg:pb-8 lg:pt-4">
         <div className="max-w-[560px]">
-          <p className="mb-3 flex items-center gap-2 text-[13px] font-bold tracking-[2px] text-white/90">
+          {/* <p className="mb-3 flex items-center gap-2 text-[13px] font-bold tracking-[2px] text-white/90">
             {active.eyebrow}
-          </p>
+          </p> */}
 
           <h1 className="text-[36px] font-extrabold leading-[1.2] sm:text-[44px] lg:text-[48px]">
             {active.heading}
@@ -505,9 +505,9 @@ export default function HeroSection() {
 
       {/* Mobile — label, heading, image, paragraph, button (in that order) */}
       <div className="relative z-10 mx-auto max-w-[1440px] px-6 pb-8 pt-4 lg:hidden">
-        <p className="mb-3 flex items-center gap-2 text-[13px] font-bold tracking-[2px] text-white/90">
+        {/* <p className="mb-3 flex items-center gap-2 text-[13px] font-bold tracking-[2px] text-white/90">
           {active.eyebrow}
-        </p>
+        </p> */}
 
         <h1
           className="text-[31.5px] font-extrabold leading-[1.25] sm:text-[36px]"

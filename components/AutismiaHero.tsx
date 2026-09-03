@@ -88,7 +88,7 @@ export default function AutismiaHero() {
 
     <div className="relative z-10 mx-auto grid max-w-[1380px] grid-cols-1 items-start gap-0 px-6 pb-16 pt-2 md:pt-20 lg:grid-cols-[1.05fr_.95fr] lg:gap-12 lg:pt-10">
       <div className="contents relative z-20 max-w-[660px] lg:block lg:pt-8">
-        <Reveal direction="down" className="order-1 mb-5 text-[14px] font-bold tracking-[.4px] text-[#1f5fff]"> FIRST CONSULTATION ₹499 ONLY</Reveal>
+        {/* <Reveal direction="down" className="order-1 mb-5 text-[14px] font-bold tracking-[.4px] text-[#1f5fff]"> FIRST CONSULTATION ₹499 ONLY</Reveal> */}
         <Reveal direction="up" delay={100} className="order-2 text-[34px] leading-[1.24] font-medium tracking-[.1px] sm:text-[40px] lg:text-[42px]"><span className="block">Is Your Child Struggling with</span><span className="mt-1 block text-[#1f5fff]">Short Attention Span, Speech Delay,</span><span className="block text-white">Hyperactivity or Impulsive Behaviour?</span></Reveal>
         <Reveal direction="up" delay={200} className="order-3 mt-5 max-w-[620px] text-[16px] leading-7 font-medium text-white/90">Start with a Personalised ADHD Consultation for Your Child at <span className="font-bold text-[#1f5fff]">B Homeo Wellness</span></Reveal>
         <Reveal direction="left" delay={300} className="order-5 relative mt-5 overflow-hidden rounded-2xl border border-[#1f5fff]/60 bg-[linear-gradient(105deg,rgba(31,95,255,.2),rgba(255,255,255,.06))] px-5 py-4 shadow-[0_12px_35px_rgba(0,0,0,.18)]">
