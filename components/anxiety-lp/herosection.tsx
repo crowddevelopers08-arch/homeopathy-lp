@@ -408,7 +408,7 @@ export default function HeroSection() {
         </div>
       )}
 
-      {/* Decorative image, reused by both desktop and mobile layouts */}
+      {/* Decorative image, reused both desktop and mobile layouts */}
       {(() => null)()}
 
       {/* Desktop / tablet — unchanged, side-by-side layout */}
