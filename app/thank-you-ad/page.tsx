@@ -2,12 +2,22 @@ import PurchaseTracking from "@/components/PurchaseTracking";
 import SiteFooter from "@/components/Sitefooter";
 import SiteNavbar from "@/components/Sitenavbar";
 import Link from "next/link";
+import Script from "next/script";
 
 export default function ThankYouPage() {
   return (
     <div className="flex min-h-screen flex-col bg-[#000d44] font-sans text-white">
       <PurchaseTracking item="Online Homeopathy Consultation" />
       <SiteNavbar />
+
+      {/* Google Ads Conversion Tracking - Submit Lead | Child */}
+      <Script id="google-ads-conversion-child" strategy="afterInteractive">
+        {`
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18360214394/7ElpCJShpe0cEPrG6rJE'
+          });
+        `}
+      </Script>
 
       <main className="relative flex flex-1 items-center justify-center overflow-hidden px-6 py-8">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(31,95,255,.18)_0%,transparent_60%)]" />
