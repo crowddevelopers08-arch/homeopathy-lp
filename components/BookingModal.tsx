@@ -15,7 +15,7 @@ import {
 type Phase = "idle" | "submitting" | "paying" | "verifying" | "payFailed";
 
 const FLOW = "homeo" as const;
-const SOURCE = "Homeo-Form-Leads";
+const SOURCE = "Homeo-adhd-Leads";
 const THANK_YOU_URL = "/thank-you-ad";
 const FEE_DISPLAY = "₹199";
 const PRODUCT = "Online Homeopathy Consultation";
